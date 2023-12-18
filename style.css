@@ -1,0 +1,226 @@
+
+/* 홈 */
+body {
+font-family: 'Jacques Francois', serif;
+font-weight: 300;
+letter-spacing: -0.1em;
+text-align: center;
+margin: 0;
+padding: 0;
+}
+h1 {
+    font-size: 39px;
+    font-weight: 100;
+    margin: 10px;
+    margin-bottom: 5px;
+    padding: 10px 0;
+}
+
+.menu button {
+    font-family: 'Jacques Francois', serif;
+    font-weight: 100;
+    letter-spacing: -0.1em;
+    background: none;
+    color: white;
+    border: none;
+    font-size: 18px;
+    margin: 0px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* 아카이브 */
+     
+    h2 {
+        font-size: 20px;
+        font-weight: 100;
+        margin: 30px;
+        margin-bottom: 10px;
+    }
+ 
+     .sub-menu button {
+        font-family: 'Jacques Francois', serif;
+        font-size: 20px;
+        font-weight: 100;
+        color: rgb(107 , 107, 107);
+        letter-spacing: -0.1em;
+        background: none;
+        border: none;
+        margin: 0 0px;
+        margin-bottom: 50px;
+        padding: 0px 10px;
+        cursor: pointer;
+    }
+    
+    .archive-contents {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center the items */
+        max-width: 1200px; /* Maximum width of the container */
+        margin: 0 auto; /* Centering the container */
+        gap: 30px; /* Space between items */
+    }
+
+    .content-item {
+        display: flex; /*Added for flexbox layout */
+        flex: 0 1 calc(33.333% -20px);  /*Three items per row, minus the gap */
+        flex-direction: column;  /*Stack items vertically */
+        align-items: center; /* Center items horizontally within the content item */
+        padding: 5px; /* Padding around content */
+    }
+
+    .image-container {
+        width: 374px; /* Set image container width */
+        height: 498px; /* Set image container height */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        overflow: hidden; /* Hide overflow */
+        margin: 5px; /* Margin below the image container */
+    }
+
+    .image-container img {
+        width: 100%; /* Image takes full width of the container */
+        height: 100%; /* Height is auto to maintain aspect ratio */
+        object-fit: cover; /*Cover the container without losing aspect ratio */
+    }
+
+    .text-container {
+        width: 374px; /* Set the text container width to match the image container */
+        margin-top: 0; /* Space between the image container and text */
+        text-align: center; /* Centering text */
+    }
+    .content-item-link {
+        text-decoration: none; /* 하이퍼링크의 밑줄 제거 */
+        color: inherit; /* 링크 색상을 부모 요소로부터 상속 */
+    }   
+
+/* 콘텐츠 */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0px;
+}
+
+.content-box {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 20px; 
+}
+
+.image-area {
+    width: 374px;
+    height: 498px;
+    /* width: 300px;
+    height: 400px; */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin-top: 50px;
+    margin-right: 50px; /* 이미지와 텍스트 사이의 간격 */
+    margin-bottom: 10px; 
+}
+
+.image-area img {
+        width: 100%; /* Image takes full width of the container */
+        height: 100%; /* Height is auto to maintain aspect ratio */
+        object-fit: cover; /*Cover the container without losing aspect ratio */
+    }
+
+.text-area {
+    margin-top: 100px;
+    max-width: 374px;
+}
+
+.color-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 0px;
+}
+
+.color-choice {
+    display: flex;
+    align-items: center;
+    margin-top: 1em; /* 위쪽 여백 */
+}
+
+.color-block {
+        width: 24px; /* Fixed size for color blocks */
+        height: 24px;
+        margin-right: 10px; /* Space between color blocks */
+        background-color: white; 
+        border: 2px solid #ccc;
+        display: inline-block;
+        
+    }
+
+.color-block.blue { background-color: black; }
+.color-block.red { background-color: black; }
+.color-block.green { background-color: black; }
+
+
+.color-choice span {
+    margin-right: 10px; /* 'color' 텍스트와 컬러 블록 사이의 간격 */
+}
+
+.button-area {
+    position: relative; 
+    display: inline-block;
+    justify-content: center;
+    width: 200x;
+    height: 28px;
+    margin-top: 10px;
+}
+ 
+.button-style {
+    width: 129px; /* 버튼의 너비 */
+    height: 28px; /* 버튼의 높이 */
+    background-color: white; /* 버튼의 배경색 */
+    border: 1px solid #EAEAEA; /* 버튼의 테두리 */
+    font-family: 'Jacques Francois', serif; /* 폰트 스타일 */
+    font-size: 14px; /* 폰트 크기 */
+    letter-spacing: -0.1em; /* 글자 간격 */
+    padding-top: 2px; 
+    padding-bottom: 4px; 
+    cursor: pointer; /* 마우스 오버 시 커서 변경 */
+    outline: none; /* 클릭 시 나타나는 외곽선 제거 */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* 기본 박스 그림자 제거 */
+    margin: 10px; /* 주변 요소와의 간격 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    line-height: normal; /* 버튼 높이와 동일한 줄 높이로 설정 */
+    /* display: inline-block; 인라인 블록으로 설정하여 너비와 높이가 적용되도록 함 */
+
+}
+
+.button-style:hover {
+    border-color: #CCCCCC;
+}
+
+.button-area button:hover + .popup {
+    display: block;
+}
+
+.popup {
+    display: none;
+    position: absolute;
+    width: 445px; /* 팝업의 너비 설정 */
+    height: 540px; /* 팝업의 높이 설정 */
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: -560px; /* 버튼 위에 나타나도록 상단 위치 조정 */
+    left: 50%; /* 왼쪽 정렬 */
+    transform: translateX(-50%); /* X축 기준 중앙 정렬 */  
+
+}
+
+/* 매거진 */
+.magazine-container {
+    width: 945px;
+    height: 627px;
+    background-color: #ccc; /* Grey background for the image area */
+    margin: 40px auto; /* Center the image area */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Add some shadow for depth */
+    overflow: hidden; 
+}
