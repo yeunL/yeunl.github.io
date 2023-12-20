@@ -1,76 +1,67 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>32.8 2 -7.3</title>
+<html>
+<!-- tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- styles.css -->
+<link rel="stylesheet" href="styles.css">
+<!-- judson -->
+<link href="https://fonts.cdnfonts.com/css/judson" rel="stylesheet">
+<!-- jacques-francois -->
 <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap" rel="stylesheet">
-<style>
-    body {
-    font-family: 'Jacques Francois', serif;
-    font-weight: 300;
-    letter-spacing: -0.1em;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    background-color: black; /* 배경색을 검은색으로 설정 */
-    color: white; /* 텍스트 색상을 하얀색으로 설정 */
-}
-    h1 {
-        font-size: 39px;
-        font-weight: 100;
-        margin: 10px;
-        margin-bottom: 5px;
-        padding: 10px 0;
-    }
-    
-    .menu button {
-        font-family: 'Jacques Francois', serif;
-        font-weight: 100;
-        letter-spacing: -0.1em;
-        background: none;
-        color: white;
-        border: none;
-        font-size: 18px;
-        margin: 0px;
-        padding: 10px 20px;
-        cursor: pointer;
-    }
 
-    h2 {
-        font-size: 20px;
-        font-weight: 100;
-        margin: 30px;
-        margin-bottom: 10px;
-    }
+<head>
+    <meta charset="UTF-8" />
+    <title>32.8 2 -7.3</title>
+    <style>
+        /* 여기에 필요한 스타일을 추가하세요 */
+        .vertical-line {
+            position: absolute;
+            left: 2rem; /* 또는 적절한 위치로 조정하세요 */
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background-color: black; /* 선 색깔 */
+            z-index: 10;
+        }
 
-    .image-container {
-        width: 945px;
-        height: 627px;
-        background-color: #ccc; /* Grey background for the image area */
-        margin: 40px auto; /* Center the image area */
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Add some shadow for depth */
-        overflow: hidden; 
-    }
+        .image-container {
+            margin-top: 2rem; /* 이미지를 위로 조정 */
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%; /* 이미지 너비 조정 */
+            position: relative; /* 위치 조정을 위해 relative 설정 */
+        }
 
-</style>
+        .image-container img {
+            width: 100%; /* 이미지를 컨테이너에 맞추기 */
+            height: auto; /* 이미지 높이를 자동으로 조정 */
+        }
+    </style>
 </head>
-<body>
-    <h1>32.8 2- 7.3</h1>
-    <div class="menu">
-        <button onclick="window.location.href='archive.html'">ARCHIVE</button>
-        <button onclick="window.location.href='home.html'">HOME</button>
-        <button onclick="window.location.href='magazine.html'">MAGAZINE</button>
-    </div>
-    <h2>MAGAZINE</h2>
 
-    <a href="magazine1.html">
+<body class="relative min-h-screen">
+    <!-- header -->
+    <header class="flex flex-row justify-start items-end m-8">
+        <h1 class="text-[8rem] tracking-[-0.1em] leading-none">32.8 2 -7.3</h1>
+        <a class="ml-20 text-xl pb-3" href="archive.html">ARCHIVE</a>
+        <a class="ml-10 text-xl pb-3" href="magazine.html">MAGAZINE</a>
+    </header>
+
+    <!-- 세로 라인
+    <div class="vertical-line"></div> -->
+
+    <!-- main -->
+    <main class="flex justify-center">
+        <!-- MAGAZINE Daily Look -->
+        <div class="absolute text-6xl text-right leading-snug -left-24 top-80 rotate-[-90deg] tracking-widest">
+            MAGAZINE<br />Daily Look
+        </div>
+
+        <!-- 이미지 컨테이너 -->
         <div class="image-container">
-                <img src="https://i.pinimg.com/originals/a2/34/16/a23416fdf9f914f218eafed06855c7a4.jpg">
-            </div>
-        </a>
+            <img src="image/magazine.png" alt="Magazine Cover" />
+        </div>
+    </main>
+</body>
 
-    </body>
 </html>
-

@@ -1,213 +1,149 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>32.8 2 -7.3</title>
+<html>
+<!-- tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- styles.css -->
+<link rel="stylesheet" href="styles.css">
+<!-- judson -->
+<link href="https://fonts.cdnfonts.com/css/judson" rel="stylesheet">
+<!-- jacques-francois -->
 <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap" rel="stylesheet">
-<style>
-    body {
-        font-family: 'Jacques Francois', serif;
-        font-weight: 100;
-        letter-spacing: -0.1em;
-        text-align: center;
-        margin: 0;
-        padding: 0;
-    }
-    h1 {
-        font-size: 39px;
-        font-weight: 100;
-        margin: 10px;
-        margin-bottom: 5px;
-        padding: 10px 0;
-    }
-    
-    .menu button {
-        font-family: 'Jacques Francois', serif;
-        font-size: 18px;
-        font-weight: 100;
-        letter-spacing: -0.1em;
-        background: none;
-        border: none;
-        margin: 0px;
-        padding: 10px 20px;
-        cursor: pointer;
-    }
 
-    h2 {
-        font-size: 20px;
-        font-weight: 100;
-        margin: 30px;
-        margin-bottom: 10px;
-    }
- 
-     .sub-menu button {
-        font-family: 'Jacques Francois', serif;
-        font-size: 20px;
-        font-weight: 100;
-        color: rgb(107 , 107, 107);
-        letter-spacing: -0.1em;
-        background: none;
-        border: none;
-        margin: 0 0px;
-        margin-bottom: 50px;
-        padding: 0px 10px;
-        cursor: pointer;
-    }
-    
-    .archive-contents {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center; /* Center the items */
-        max-width: 1200px; /* Maximum width of the container */
-        margin: 0 auto; /* Centering the container */
-        gap: 30px; /* Space between items */
-    }
-
-    .content-item {
-        display: flex; /*Added for flexbox layout */
-        flex: 0 1 calc(33.333% -20px);  /*Three items per row, minus the gap */
-        flex-direction: column;  /*Stack items vertically */
-        align-items: center; /* Center items horizontally within the content item */
-        padding: 5px; /* Padding around content */
-    }
-
-    .image-container {
-        width: 374px; /* Set image container width */
-        height: 498px; /* Set image container height */
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        overflow: hidden; /* Hide overflow */
-        margin: 5px; /* Margin below the image container */
-    }
-
-    .image-container img {
-        width: 100%; /* Image takes full width of the container */
-        height: 100%; /* Height is auto to maintain aspect ratio */
-        object-fit: cover; /*Cover the container without losing aspect ratio */
-    }
-
-    .text-container {
-        width: 374px; /* Set the text container width to match the image container */
-        margin-top: 0; /* Space between the image container and text */
-        text-align: center; /* Centering text */
-    }
-    .content-item-link {
-        text-decoration: none; /* 하이퍼링크의 밑줄 제거 */
-        color: inherit; /* 링크 색상을 부모 요소로부터 상속 */
-    }   
-
-</style>
-
+<head>
+    <meta charset="UTF-8" />
+    <title>32.8 2 -7.3</title>
 </head>
+<style>
+        /* 이곳에 추가적인 CSS 스타일을 작성하시면 됩니다. */
+        .image-grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem; /* 이미지 간격 조정 */
+            padding: 1.5rem;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1200px; /* 최대 너비 설정 */
+        }
+
+        .image-card {
+            position: relative;
+            width: 100%;
+            padding-top: 133%; /* 이미지 비율에 따라 조정 (3:4 비율이면 133% 설정) */
+            background: #f3f3f3; /* 이미지 배경 색상 설정 */
+        }
+
+        .image-card img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 이미지를 div에 맞게 자르기 */
+        }
+
+        .rotated-text {
+            position: absolute;
+            left: 5vw; /* 왼쪽 여백 */
+            top: 50vh; /* 화면 높이의 중간 */
+            transform: translate(-100%, -50%) rotate(-90deg);
+            transform-origin: left top;
+            white-space: nowrap;
+            font-size: 2.5rem; /* 텍스트 크기 조정 */
+            line-height: 1; /* 줄 간격 조정 */
+            letter-spacing: -0.05em; /* 글자 간격 조정 */
+        }
+
+        /* 반응형을 위한 미디어 쿼리 */
+        @media (min-width: 768px) {
+            .rotated-text {
+                font-size: 3rem; /* 더 큰 화면에서의 폰트 크기 조정 */
+            }
+        }
+    </style>
+</head>
+<body class="relative min-h-screen bg-white">
 <body>
-    <h1>32.8 2- 7.3</h1>
-    <div class="menu">
-        <button onclick="window.location.href='archive.html'">ARCHIVE</button>
-        <button onclick="window.location.href='home.html'">HOME</button>
-        <button onclick="window.location.href='magazine.html'">MAGAZINE</button>
-    </div>
-    <h2>2023-2 ARCHIVE</h2>
-    <div class="sub-menu">
-        <button id="btn1" onclick="changeContent('32.8')">at 32.8</button>
-        <button id="btn2" onclick="changeContent('20')">at 20</button>
-        <button id="btn3" onclick="changeContent('-7.3')">at -7.3</button>
-    </div>
+    <!-- header -->
+    <header class="flex flex-row justify-start items-end m-8">
+        <h1 class="text-[8rem] tracking-[-0.1em] leading-none">32.8 2 -7.3</h1>
+        <a class="ml-20 text-xl pb-3" href="archive.html">ARCHIVE</a>
+        <a class="ml-10 text-xl pb-3" href="magazine.html">MAGAZINE</a>
+    </header>
+    <!-- <div class="vertical-line"></div> -->
 
-    <div class="archive-contents">
-        <a href="content1.html" class="content-item-link">
-        <div class="content-item">
-            <div class="image-container">
-                <img src="https://img.vogue.co.kr/vogue/2014/08/style_55547a404a9ed.jpg" alt="Content 1">
-            </div>
-            <div class="text-container">
-                <p style="margin-bottom:3px;"> text text text </p>
-                <p style="margin-top:3px;">[at 32.8]</p>
-            </div>
-        </a>
+    <!-- main -->
+    <main>
+        <!-- ARCHIVE Daily Look -->
+        <div class="absolute text-6xl text-right leading-snug -left-20 top-72 rotate-[-90deg] tracking-widest">
+            ARCHIVE<br />Daily Look
         </div>
 
-        <a href="content2.html" class="content-item-link">
-        <div class="content-item">
-            <div class="image-container">
-                <img src="https://img.vogue.co.kr/vogue/2014/08/style_55547a404a9ed.jpg" alt="Content 2">
+        <div class="ml-[15rem] grid grid-cols-2">
+            <!-- card: 이미지랑 텍스트 -->
+            <!-- href 안에 경로 바꾸기 -->
+            <div class="flex flex-col items-center" onclick="location.href='archive-detail-adidas.html';">
+                <!-- src 안에 경로 바꾸기 -->
+                <img class="w-[374px] h-[498px] mb-4" src="image/adidas.png" />
+                <!-- 텍스트 내용 바꾸기 -->
+                <p class="text-base text-center">🔥🐦<br />[at 20]</p>
             </div>
-            <div class="text-container">
-                <p style="margin-bottom:3px;"> text text text </p>
-                <p style="margin-top:3px;">[at 32.8]</p>
+
+            <!-- card: 이미지랑 텍스트 -->
+            <!-- href 안에 경로 바꾸기 -->
+            <div class="flex flex-col items-center mb-10" onclick="location.href='archive-detail-green.html';">
+                <!-- src 안에 경로 바꾸기 -->
+                <img class="w-[374px] h-[498px] mb-4" src="image/knit2.png" />
+                <!-- 텍스트 내용 바꾸기 -->
+                <p class="text-base text-center">💚💚💚<br />[at -7.3]</p>
             </div>
-        </a>
- 
-        </div>
-        <!--
-        <div class="content-item">
-            <div class="image-container">
-                <img src="https://i.pinimg.com/originals/12/92/c1/1292c133edd1ead0a4b10481474ce43a.jpg" alt="Content 3">
+
+            <!-- card: 이미지랑 텍스트 -->
+            <!-- href 안에 경로 바꾸기 -->
+            <div class="flex flex-col items-center" onclick="location.href='archive-detail-boots.html';">
+                <!-- src 안에 경로 바꾸기 -->
+                <img class="w-[374px] h-[498px] mb-4" src="image/boots.png" />
+                <!-- 텍스트 내용 바꾸기 -->
+                <p class="text-base text-center">👢부츠의 계절<br />[at -7.3]</p>
             </div>
-            <div class="text-container">
-                <p style="margin-bottom:3px;"> text text text </p>
-                <p style="margin-top:3px;">[at 32.8]</p>
+
+            <!-- card: 이미지랑 텍스트 -->
+            <!-- href 안에 경로 바꾸기 -->
+            <div class="flex flex-col items-center" onclick="location.href='archive-detail-red.html';">
+                <!-- src 안에 경로 바꾸기 -->
+                <img class="w-[374px] h-[498px] mb-4" src="image/red.png" />
+                <!-- 텍스트 내용 바꾸기 -->
+                <p class="text-base text-center">니트는 정말 좋아!<br />[at -7.3]</p>
+            </div>
+
+            <!-- card: 이미지랑 텍스트 -->
+            <!-- href 안에 경로 바꾸기 -->
+            <div class="flex flex-col items-center" onclick="location.href='archive-detail-northpace.html';">
+                <!-- src 안에 경로 바꾸기 -->
+                <img class="w-[374px] h-[498px] mb-4" src="image/northpace.png" />
+                <!-- 텍스트 내용 바꾸기 -->
+                <p class="text-base text-center">노페의 계절<br />[at -7.3]</p>
+            </div>
+
+             <!-- card: 이미지랑 텍스트 -->
+            <!-- href 안에 경로 바꾸기 -->
+            <div class="flex flex-col items-center" onclick="location.href='archive-detail-ddosoon.html';">
+                <!-- src 안에 경로 바꾸기 -->
+                <img class="w-[374px] h-[498px] mb-4" src="image/ddosoon.jpeg" />
+                <!-- 텍스트 내용 바꾸기 -->
+                <p class="text-base text-center">미란정은과 함께!<br />[at 32.8]</p>
+            </div>
+
+            <!-- card: 이미지랑 텍스트 -->
+            <!-- href 안에 경로 바꾸기 -->
+            <div class="flex flex-col items-center" onclick="location.href='archive-detail-black.html';">
+                <!-- src 안에 경로 바꾸기 -->
+                <img class="w-[374px] h-[498px] mb-4" src="image/black.jpeg" />
+                <!-- 텍스트 내용 바꾸기 -->
+                <p class="text-base text-center">black!<br />[at 32.8]</p>
             </div>
 
         </div>
-        <div class="content-item">
-            <div class="image-container">
-                <img src="https://i.pinimg.com/originals/12/92/c1/1292c133edd1ead0a4b10481474ce43a.jpg" alt="Content 4">
-            </div>
-            <div class="text-container">
-                <p style="margin-bottom:3px;"> text text text </p>
-                <p style="margin-top:3px;">[at 32.8]</p>
-            </div>
-        </div>
-        <div class="content-item">
-            <div class="image-container">
-                <img src="image-placeholder-5.jpg" alt="Content 5">
-            </div>
-            <div class="text-container">
-                <p>Text for Content 5</p>
-            </div>
-        </div>
-        <div class="content-item">
-            <div class="image-container">
-                <img src="image-placeholder-6.jpg" alt="Content 6">
-            </div>
-            <div class="text-container">
-                <p>Text for Content 6</p>
-            </div>
-        </div>
-        <div class="content-item">
-            <div class="image-container">
-                <img src="image-placeholder-7.jpg" alt="Content 7">
-            </div>
-            <div class="text-container">
-                <p>Text for Content 7</p>
-            </div>
-        </div>
-        <div class="content-item">
-            <div class="image-container">
-                <img src="image-placeholder-8.jpg" alt="Content 8">
-            </div>
-            <div class="text-container">
-                <p>Text for Content 8</p>
-            </div>
-        </div>
-        <div class="content-item">
-            <div class="image-container">
-                <img src="image-placeholder-9.jpg" alt="Content 9">
-            </div>
-            <div class="text-container">
-                <p>Text for Content 9</p>
-            </div>
-        </div>
-        <div class="content-item">
-            <div class="image-container">
-                <img src="image-placeholder-10.jpg" alt="Content 10">
-            </div>
-            <div class="text-container">
-                <p>Text for Content 10</p>
-            </div>
-        </div> -->
+    </main>
+</body>
 
-    </body>
-    
 </html>
